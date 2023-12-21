@@ -1,0 +1,19 @@
+#mastermind {
+  display: grid;
+  grid-template-columns: 18% 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas: 
+    "color-picker board"
+    "controls board";
+
+  app-color-picker {
+    grid-area: color-picker;
+  }
+  #controls {
+    grid-area: controls;
+  }
+  #board {
+    grid-area: board;
+  }
+}

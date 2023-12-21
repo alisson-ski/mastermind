@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+  --background-color: #252422;
+  --primary-color: #252422;
+  --secondary-color: #7C203A;
+
+  --page-background-color: #ebebeb;
+  
+  --primary-font: 'Merriweather';
+  --primary-font-color: #484545;
+  --header-font-color: #EFF6EE;
+  
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1400px;
+}
+
+@media (max-width: var(--xl)) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: var(--md)) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: var(--primary-font);
+  color: var(--primary-font-color);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.fa-solid, .fa-brands {
+  color: var(--primary-color);
+}
+
