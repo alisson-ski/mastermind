@@ -1,10 +1,18 @@
 <div id="mastermind">
-  <app-color-picker></app-color-picker>
+  <app-color-picker (colorSelect)="onColorSelect($event)"></app-color-picker>
+  
   <div id="board">
-    
+    <app-attempt *ngFor="let x of [].constructor(numberOfAttempts); let attempt = index;"
+      [isCurrentAttempt]="currentAttempt === attempt"
+    >
+    </app-attempt>
+
+    <div class="secret-sequence">
+      <div class="ski-color-circle" *ngFor="let color of secretSequence" [style.background-color]="color"></div>
+    </div>
   </div>
+  
   <div id="controls">
-    
   </div>
 </div>
 

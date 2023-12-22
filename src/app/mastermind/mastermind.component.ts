@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Colors } from './color';
 
 @Component({
   selector: 'app-mastermind',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class MastermindComponent {
 
+  secretSequence: Colors[] = [Colors.RED, Colors.BLUE, Colors.GREEN, Colors.YELLOW];
+
+  colorBeingHeld: Colors | null = null;
+
+  numberOfAttempts = 8;
+  currentAttempt = 0;
+
+  onColorSelect(color: Colors) {
+    this.colorBeingHeld = color;
+  }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Colors } from '../color';
 
 @Component({
   selector: 'app-attempt',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AttemptComponent {
 
+  @Input() colorBeingHeld: Colors | null = null;
+  @Input() isCurrentAttempt: boolean = false;
+  colors: Array<Colors | null> = [null, null, null, null];
 }

@@ -1,7 +1,11 @@
 #mastermind {
+  width: 42rem;
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: 18% 1fr;
+  grid-template-columns: 25% 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 3rem;
 
   grid-template-areas: 
     "color-picker board"
@@ -10,10 +14,35 @@
   app-color-picker {
     grid-area: color-picker;
   }
+
   #controls {
     grid-area: controls;
+    border: solid 3px var(--primary-color);
   }
+
   #board {
     grid-area: board;
+
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.2rem;
+
+    > * {
+      flex-grow: 1;
+    }
   }
+
+  .secret-sequence {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6rem;
+
+    border: solid 3px var(--primary-color);
+  }
+
+  .secret-sequence {
+    border-color: var(--secondary-color);
+  }
+
 }

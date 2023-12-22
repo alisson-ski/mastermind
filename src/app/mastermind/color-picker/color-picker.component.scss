@@ -9,11 +9,10 @@
   padding: 1.5rem 1rem;
 
   .selectable-color {
-    --color-size: 3rem;
-
     height: var(--color-size);
     width: var(--color-size);
     border-radius: 100px;
+    cursor: pointer;
 
     &.selected-color {
       border: solid 3px var(--primary-color);

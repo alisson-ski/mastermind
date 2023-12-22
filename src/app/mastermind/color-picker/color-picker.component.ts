@@ -9,12 +9,12 @@ import { Colors } from '../color';
 export class ColorPickerComponent {
 
   colors = Object.values(Colors);
-  selectedColor: Colors | null = Colors.BLUE;
+  selectedColor: Colors | null = null;
 
-  @Output() colorSelect = new EventEmitter<string>();
+  @Output() colorSelect = new EventEmitter<Colors>();
 
   onColorClick(color: string) {
     this.selectedColor = color as Colors;
-    this.colorSelect.emit(color);
+    this.colorSelect.emit(color as Colors);
   }
 }

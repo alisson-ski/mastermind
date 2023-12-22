@@ -1,1 +1,8 @@
-<p>attempt works!</p>
+<div class="attempt"
+  [class.current-attempt]="isCurrentAttempt"
+>
+  <div class="ski-color-circle" *ngFor="let color of colors" 
+    [style.background-color]="color || 'lightgrey'"  
+  >
+  </div>
+</div>

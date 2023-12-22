@@ -1,0 +1,11 @@
+.attempt {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 6rem;
+
+  
+  &.current-attempt {
+    border: solid 3px var(--primary-color);
+  }
+}

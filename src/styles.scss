@@ -10,6 +10,8 @@
   --primary-font: 'Merriweather';
   --primary-font-color: #484545;
   --header-font-color: #EFF6EE;
+
+  --color-size: 3.2rem;
   
   --sm: 576px;
   --md: 768px;
@@ -46,3 +48,8 @@ body {
   color: var(--primary-color);
 }
 
+.ski-color-circle {
+  height: var(--color-size);
+  width: var(--color-size);
+  border-radius: 100px;
+}
