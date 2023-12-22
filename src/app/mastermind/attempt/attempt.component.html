@@ -1,8 +1,24 @@
 <div class="attempt"
   [class.current-attempt]="isCurrentAttempt"
 >
-  <div class="ski-color-circle" *ngFor="let color of colors" 
-    [style.background-color]="color || 'lightgrey'"  
-  >
+  <div class="attempt-results">
+    <div *ngFor="let result of attemptResults" 
+    [style.background-color]="isPreviousAttempt || (isCurrentAttempt && gameEnded) ? result.toString(): 'lightgrey'"></div>
+  </div>
+
+  <div class="attempt-colors">
+    <div class="ski-color-circle" *ngFor="let color of colors; let i = index"
+      
+      [style.background-color]="displayedColors[i] || 'lightgray'"
+      [style.cursor]="isCurrentAttempt && colorBeingHeld ? 'pointer' : 'default'"
+
+      [class.filled]="displayedColors[i]"
+
+      (mouseenter)="onMouseEnterColor(i)"
+      (mouseleave)="onMouseLeaveColor(i)"
+
+      (click)="onColorClick(i)"
+    >
+    </div>
   </div>
 </div>

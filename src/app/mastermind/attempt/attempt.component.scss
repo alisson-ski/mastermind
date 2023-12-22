@@ -1,11 +1,46 @@
 .attempt {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 6rem;
+  padding: 0 1rem;
 
+  .attempt-results {
+    width: 25%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: lightgrey;
+      border-radius: 100px;
+
+      border: solid 2px var(--primary-color);
+    }
+  }
+
+  .attempt-colors {
+    width: 75%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6rem;
+  }
   
   &.current-attempt {
     border: solid 3px var(--primary-color);
+    
+    .attempt-colors {
+      > div {
+        cursor: pointer;
+
+        &:not(:hover):not(.filled) {
+          background-color: lightgrey !important;
+        }
+      }
+    }
   }
 }
