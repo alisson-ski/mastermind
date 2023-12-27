@@ -27,6 +27,7 @@
 
   #board {
     grid-area: board;
+    min-height: 19rem;
 
     background-color: var(--primary-color);
     border-radius: var(--border-radius);
@@ -61,5 +62,17 @@
         background-color: lightgrey !important;
       }
     }
+  }
+}
+
+@media(max-width: 768px) {
+  #mastermind {
+    width: auto;
+    overflow-y: auto;
+    grid-template-columns: 1fr 12rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      'board board'
+      'color-picker controls';
   }
 }
