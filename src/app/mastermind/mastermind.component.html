@@ -13,14 +13,16 @@
     >
     </app-attempt>
 
-    <!-- <div class="secret-sequence">
-      <div class="ski-color-circle" *ngFor="let color of secretSequence" [style.background-color]="color"></div>
-    </div> -->
+    <div class="secret-sequence">
+      <div [class.hidden-color]="!gameEnded" class="ski-color-circle" *ngFor="let color of secretSequence" [style.background-color]="color">
+        {{gameEnded ? '' : '?'}}
+      </div>
+    </div>
   </div>
   
   <div id="controls">
-    <button (click)="restartGame()">Reiniciar Jogo</button>
-    <button (click)="onVerifySequenceClick()">Verificar Sequencia</button>
+    <button class="ski-btn" (click)="onVerifySequenceClick()">Verificar Sequencia</button>
+    <button class="ski-btn" (click)="restartGame()">Reiniciar Jogo</button>
   </div>
 </div>
 

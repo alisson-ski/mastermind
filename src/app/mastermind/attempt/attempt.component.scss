@@ -3,7 +3,7 @@
   padding: 0 1rem;
 
   .attempt-results {
-    width: 25%;
+    width: 6rem;
     
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -14,15 +14,14 @@
     > div {
       width: 1.5rem;
       height: 1.5rem;
-      background-color: lightgrey;
       border-radius: 100px;
 
-      border: solid 2px var(--primary-color);
+      border: solid 2px var(--background-color);
     }
   }
 
   .attempt-colors {
-    width: 75%;
+    flex-grow: 1;
 
     display: flex;
     justify-content: space-around;
@@ -31,7 +30,13 @@
   }
   
   &.current-attempt {
-    border: solid 3px var(--primary-color);
+    background-color: var(--background-color);
+
+    .attempt-results {
+      > div {
+        border: solid 2px lightgrey;
+      }
+    }
     
     .attempt-colors {
       > div {

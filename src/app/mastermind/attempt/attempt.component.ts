@@ -45,8 +45,9 @@ export class AttemptComponent implements OnInit {
     if (!this.isCurrentAttempt) return;
     if (this.colorBeingHeld == null) return;
     
-    if (this.colors.includes(this.colorBeingHeld)) {
-      return window.alert('Você não pode repetir cores na sequência');
+    const indexOfColorBeingHeldInCurrentSequence = this.colors.indexOf(this.colorBeingHeld);
+    if (indexOfColorBeingHeldInCurrentSequence != -1) {
+      this.colors[indexOfColorBeingHeldInCurrentSequence] = null;
     }
 
     this.colors[index] = this.colorBeingHeld;

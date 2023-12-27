@@ -14,7 +14,7 @@ export class MastermindComponent implements OnInit {
 
   colorBeingHeld: Colors | null = null;
 
-  numberOfAttempts = 8;
+  numberOfAttempts = 10;
   currentAttempt = 0;
 
   allColors = Object.values(Colors);
@@ -52,13 +52,23 @@ export class MastermindComponent implements OnInit {
       }, 200)
     }
 
-    this.currentAttempt++;
+    if (this.currentAttempt == this.numberOfAttempts - 1) {
+      this.gameEnded = true;
 
-    console.log(currentAttemptData);
-    
+      return setTimeout(() => {
+        window.alert('Você perdeu! Tente novamente.');
+      }, 200)
+    }
+
+    this.currentAttempt++;   
   }
 
   restartGame() {
+    if (!this.gameEnded) {
+      const restartGameConfirmation = window.confirm('Tem certeza que deseja reiniciar o jogo?');
+      if (!restartGameConfirmation) return;
+    }
+
     location.reload();
   }
 

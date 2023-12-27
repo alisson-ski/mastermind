@@ -2,7 +2,7 @@
 
 :root {
   --background-color: #252422;
-  --primary-color: #252422;
+  --primary-color: #838383;
   --secondary-color: #7C203A;
 
   --page-background-color: #ebebeb;
@@ -10,6 +10,8 @@
   --primary-font: 'Merriweather';
   --primary-font-color: #484545;
   --header-font-color: #EFF6EE;
+
+  --border-radius: 8px;
 
   --color-size: 3.2rem;
   
@@ -46,6 +48,19 @@ body {
 
 .fa-solid, .fa-brands {
   color: var(--primary-color);
+}
+
+.ski-btn {
+  height: 3rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: none;
+  color: white;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  cursor: pointer;
 }
 
 .ski-color-circle {

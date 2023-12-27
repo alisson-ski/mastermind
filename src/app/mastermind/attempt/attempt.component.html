@@ -3,7 +3,7 @@
 >
   <div class="attempt-results">
     <div *ngFor="let result of attemptResults" 
-    [style.background-color]="isPreviousAttempt || (isCurrentAttempt && gameEnded) ? result.toString(): 'lightgrey'"></div>
+    [style.background-color]="isPreviousAttempt || (isCurrentAttempt && gameEnded) ? result.toString(): 'none'"></div>
   </div>
 
   <div class="attempt-colors">
