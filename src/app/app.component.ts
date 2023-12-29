@@ -20,14 +20,14 @@ export class AppComponent {
   externalLinks: ExternalLink[] = [{
     title: 'GitHub',
     href: 'https://github.com/alisson-ski',
-    iconClass: 'fa-brands fa-square-github'
+    iconClass: 'uil uil-github'
   },{
     title: 'LinkedIn',
     href: 'https://www.linkedin.com/in/alissonlewinski/',
-    iconClass: 'fa-brands fa-linkedin'
+    iconClass: 'uil uil-linkedin'
   },{
     title: 'Site Principal',
     href: 'https://alisson-ski.github.io/',
-    iconClass: 'fa-solid fa-square-arrow-up-right'
+    iconClass: 'uit uit-house-user'
   }]
 }
