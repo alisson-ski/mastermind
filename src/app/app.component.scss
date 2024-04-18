@@ -1,0 +1,91 @@
+.app-container {
+  background-color: var(--body-background);
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
+    }
+
+    app-credits {
+      margin-top: auto;
+    }
+  }
+}
+
+#mastermind {
+  width: 29rem;
+  max-height: 36rem;
+
+  margin-top: 4rem;
+  margin-bottom: 4.5rem;
+
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-rows: 2rem 1fr;
+  column-gap: 1.4rem;
+  row-gap: 0.5rem;
+
+  grid-template-areas: 
+    ". controls"
+    "color-picker board";
+
+  app-color-picker {
+    grid-area: color-picker;
+  }
+
+  #controls {
+    grid-area: controls;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  #board {
+    grid-area: board;
+    min-height: 19rem;
+    padding: 0.5rem;
+    background-color: var(--component-background);
+    border-radius: var(--border-radius);
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    > * {
+      flex-grow: 1;
+    }
+  }
+
+  .secret-sequence {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6rem;
+    padding-right: 1rem;
+
+    margin-left: 7rem;
+    
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      font-size: 12px;
+
+      &.hidden-color {
+        background-color: lightgrey !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="attempt"
+  [class.current-attempt]="isCurrentAttempt"
+>
+  <div class="attempt-colors">
+    <div class="ski-color-circle color-{{displayedColors[i] | lowercase}}" *ngFor="let color of colors; let i = index"
+      
+      [style.cursor]="isCurrentAttempt && colorBeingHeld ? 'pointer' : 'default'"
+
+      [class.filled]="displayedColors[i]"
+
+      (mouseenter)="onMouseEnterColor(i)"
+      (mouseleave)="onMouseLeaveColor(i)"
+
+      (click)="onColorClick(i)"
+    >
+    </div>
+  </div>
+
+  <div class="attempt-results">
+    <div *ngFor="let result of attemptResults" 
+    [style.background-color]="isPreviousAttempt || (isCurrentAttempt && gameEnded) ? result.toString(): 'none'"></div>
+  </div>
+</div>

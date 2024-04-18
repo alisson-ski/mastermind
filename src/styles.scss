@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/ski-design/ski.scss';
+
+.color-red {background-color: var(--red);}
+.color-blue {background-color: var(--blue);}
+.color-green {background-color: var(--green);}
+.color-yellow {background-color: var(--yellow);}
+.color-orange {background-color: var(--orange);}
+.color-purple {background-color: var(--purple);}
+.color-pink {background-color: var(--pink);}
