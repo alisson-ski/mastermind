@@ -1,8 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Colors } from '../color';
+import { Colors } from '../../models/color';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-color-picker',
+  standalone: true,
+  imports: [
+    CommonModule
+  ],
   templateUrl: './color-picker.component.html',
   styleUrls: ['./color-picker.component.scss']
 })

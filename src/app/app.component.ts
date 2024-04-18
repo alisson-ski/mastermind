@@ -1,33 +1,89 @@
-import { Component } from '@angular/core';
-
-interface ExternalLink {
-  title: string,
-  href: string,
-  iconClass: string
-}
+import { Component, OnInit } from '@angular/core';
+import { CreditsComponent } from './components/credits/credits.component';
+import { AttemptComponent } from './components/attempt/attempt.component';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { Colors } from './models/color';
+import { AttemptResult, AttemptResultAndSequence } from './components/attempt/attempt';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    CreditsComponent,
+    AttemptComponent,
+    ColorPickerComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  siteTitle = 'Mastermind';
-  siteSubtitle = 'Teste sua lógica';
-  creditsText = 'Feito por Alisson Lewinski';
+  secretSequence: Colors[] = [];
+  gameEnded = false;
 
-  externalLinks: ExternalLink[] = [{
-    title: 'GitHub',
-    href: 'https://github.com/alisson-ski',
-    iconClass: 'uil uil-github'
-  },{
-    title: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/alissonlewinski/',
-    iconClass: 'uil uil-linkedin'
-  },{
-    title: 'Site Principal',
-    href: 'https://alisson-ski.github.io/',
-    iconClass: 'uit uit-house-user'
-  }]
+  colorBeingHeld: Colors | null = null;
+
+  numberOfAttempts = 10;
+  currentAttempt = 0;
+
+  allColors = Object.values(Colors);
+
+  allAttempts: AttemptResultAndSequence[] = [];
+
+  ngOnInit(): void {
+    this.generateSecretSequence();
+  }
+
+  generateSecretSequence() {
+    const sequence: number[] = [];
+    while (sequence.length < 4) {
+      const randomNumber = Math.floor(Math.random() * 7);
+      if (!sequence.includes(randomNumber)) {
+        sequence.push(randomNumber);
+      }
+    }
+
+    this.secretSequence = sequence.map((number) => this.allColors[number]);
+  }
+
+  onVerifySequenceClick() {
+    const currentAttemptData = this.allAttempts[this.currentAttempt];
+
+    if (currentAttemptData.sequence.includes(null)) {
+      return  window.alert('Preencha toda a sequência antes de verificar');
+    }
+
+    if (currentAttemptData.result.every(result => result == AttemptResult.BLACK)) {
+      this.gameEnded = true;
+
+      return setTimeout(() => {
+        window.alert('Parabéns, você acertou a sequência!');
+      }, 200)
+    }
+
+    if (this.currentAttempt == this.numberOfAttempts - 1) {
+      this.gameEnded = true;
+
+      return setTimeout(() => {
+        window.alert('Você perdeu! Tente novamente.');
+      }, 200)
+    }
+
+    this.currentAttempt++;   
+  }
+
+  restartGame() {
+    if (!this.gameEnded) {
+      const restartGameConfirmation = window.confirm('Tem certeza que deseja reiniciar o jogo?');
+      if (!restartGameConfirmation) return;
+    }
+
+    location.reload();
+  }
+
+  onColorSelect(color: Colors) {
+    this.colorBeingHeld = color;
+  }
 }

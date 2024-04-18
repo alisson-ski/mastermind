@@ -1,4 +1,4 @@
-import { Colors } from "../color";
+import { Colors } from "../../models/color";
 
 export enum AttemptResult {
   BLACK = 'BLACK',

@@ -1,70 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import '../node_modules/ski-design/ski.scss';
 
-:root {
-  --background-color: #252422;
-  --primary-color: #838383;
-  --secondary-color: #7C203A;
-
-  --page-background-color: #ebebeb;
-  
-  --primary-font: 'Merriweather';
-  --primary-font-color: #484545;
-  --header-font-color: #EFF6EE;
-
-  --border-radius: 8px;
-
-  --color-size: 3.2rem;
-  
-  --sm: 576px;
-  --md: 768px;
-  --lg: 992px;
-  --xl: 1200px;
-  --xxl: 1400px;
-}
-
-@media (max-width: var(--xl)) {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@media (max-width: var(--md)) {
-  html {
-    font-size: 87.5%;
-  }
-}
-
-body {
-  margin: 0;
-}
-
-* {
-  font-family: var(--primary-font);
-  color: var(--primary-font-color);
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.fa-solid, .fa-brands, .uil, .uit {
-  color: var(--primary-color);
-}
-
-.ski-btn {
-  height: 3rem;
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  border: none;
-  color: white;
-
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.7px;
-  cursor: pointer;
-}
-
-.ski-color-circle {
-  height: var(--color-size);
-  width: var(--color-size);
-  border-radius: 100px;
-}
+.color-red {background-color: var(--red);}
+.color-blue {background-color: var(--blue);}
+.color-green {background-color: var(--green);}
+.color-yellow {background-color: var(--yellow);}
+.color-orange {background-color: var(--orange);}
+.color-purple {background-color: var(--purple);}
+.color-pink {background-color: var(--pink);}

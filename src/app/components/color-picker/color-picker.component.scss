@@ -1,22 +1,18 @@
 #color-picker {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   justify-items: center;
   align-items: center;
-  background-color: var(--primary-color);
-  border-radius: var(--border-radius);
-  
-  row-gap: 1rem;
-  padding: 1.5rem 1rem;
+  row-gap: 0.8rem;
 
   .selectable-color {
-    height: var(--color-size);
-    width: var(--color-size);
+    height: 2rem;
+    width: 2rem;
     border-radius: 100px;
     cursor: pointer;
 
     &.selected-color {
-      border: solid 3px white;
+      border: solid 2spx white;
     }
   }
 }

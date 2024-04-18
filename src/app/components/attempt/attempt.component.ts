@@ -1,9 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Colors } from '../color';
 import { AttemptResult, AttemptResultAndSequence } from './attempt';
+import { Colors } from '../../models/color';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-attempt',
+  standalone: true,
+  imports: [
+    CommonModule
+  ],
   templateUrl: './attempt.component.html',
   styleUrls: ['./attempt.component.scss']
 })
