@@ -1,6 +1,7 @@
 .attempt {
   display: flex;
   border: solid 1px var(--white);
+  background-color: var(--dark-gray);
 
   .attempt-results {
     width: 5.6rem;
@@ -41,8 +42,6 @@
   }
   
   &.current-attempt {
-    background-color: var(--background-color);
-
     .attempt-colors {
       > div {
         cursor: pointer;
