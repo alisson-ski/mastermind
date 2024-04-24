@@ -19,7 +19,7 @@
       border-radius: 100px;
       margin: auto;
 
-      border: solid 2px var(--white);
+      background-color: var(--gray);
     }
 
     border-left: solid 1px var(--white);
@@ -34,10 +34,10 @@
     min-height: 5.6rem;
 
     > div {
-      border: solid 2px var(--white);
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 100px;
+      background-color: var(--gray);
     }
   }
   
@@ -45,6 +45,8 @@
     .attempt-colors {
       > div {
         cursor: pointer;
+        border: solid 2px var(--white);
+        background-color: unset;
       }
     }
   }

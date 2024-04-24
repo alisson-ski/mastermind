@@ -15,16 +15,22 @@
           (onAttemptChanged)="this.allAttempts[attempt] = $event"
         >
         </app-attempt>
-    
-        <div class="secret-sequence">
+      </div>
+ 
+      <div class="secret-sequence">
+        <div class="secret-colors">
           <div [class.hidden-color]="!gameEnded" class="ski-color-circle" *ngFor="let color of secretSequence" [style.background-color]="color">
             {{gameEnded ? '' : '?'}}
           </div>
         </div>
+        <div class="secret-results-placeholder"></div>
       </div>
-      
+
       <div id="controls">
         <button class="bg-black" (click)="onVerifySequenceClick()">Verificar Sequência</button>
+        <button class="icon-button bg-black" (click)="restartGame()">
+          <i class="icon-refresh"></i>
+        </button>
         <!-- <button class="ski-btn" (click)="restartGame()">Reiniciar Jogo</button> -->
       </div>
     </div>
