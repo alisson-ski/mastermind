@@ -123,3 +123,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  #mastermind {
+    max-width: 75vw;
+
+    app-color-picker {
+      left: -3.5rem;
+    }
+  }
+}

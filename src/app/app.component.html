@@ -19,7 +19,7 @@
  
       <div class="secret-sequence">
         <div class="secret-colors">
-          <div [class.hidden-color]="!gameEnded" class="ski-color-circle" *ngFor="let color of secretSequence" [style.background-color]="color">
+          <div [class.hidden-color]="!gameEnded" class="ski-color-circle color-{{color | lowercase}}" *ngFor="let color of secretSequence">
             {{gameEnded ? '' : '?'}}
           </div>
         </div>

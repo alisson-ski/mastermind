@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
 
     if (currentAttemptData.result.every(result => result == AttemptResult.BLACK)) {
       this.gameEnded = true;
+      this.numberOfAttempts = this.currentAttempt + 1;
 
       return setTimeout(() => {
         window.alert('Parabéns, você acertou a sequência!');
